@@ -1,0 +1,42 @@
+﻿<!DOCTYPE html>
+<html data-ng-app="mainmodule" data-ng-cloak="" class="no-js">
+<head>
+    <meta charset="utf-8" />
+    <meta name="description" content="" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>Linux Nancy</title>
+</head>
+<body>
+
+    <h1>Ich laufe auf Linux .... und bin katholisch</h1>
+    <div data-ng-controller="mainController">
+        <div>
+            <div>
+                <button data-ng-click="ladeMitarbeiter()">Mitarbeiter anzeigen</button>
+            </div>
+            <div>
+                <button data-ng-click="ladeKunden()">Kunden anzeigen</button>
+            </div>
+            <div data-ng-show="data.mitarbeiter">
+                <h3>Personen</h3>
+                <ul>
+                    <li data-ng-repeat="mitarbeiter in data.mitarbeiter">{{mitarbeiter.vorname}} - {{mitarbeiter.name}}
+                    </li>
+                </ul>
+            </div>
+            <div data-ng-show="data.kunden">
+                <h3>Kunden</h3>
+                <ul>
+                    <li data-ng-repeat="kunde in data.kunden">{{kunde.id}} - {{kunde.vorname}}
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <script type="text/javascript" src="scripts/jquery-2.1.1.min.js"></script>
+    <script type="text/javascript" src="scripts/angular.min.js"></script>
+    <script type="text/javascript" src="scripts/apiroutes.js"></script>
+    <script type="text/javascript" src="scripts/maincontroller.js"></script>
+</body>
+</html>
